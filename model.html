@@ -5,12 +5,9 @@
 <body>
     <script >
         function insert() {
-            var fieldNameElement = document.getElementById('list_row');
-            fieldNameElement.innerHTML = document.getElementById("textareaID").value;
+            document.getElementById('list_row').innerHTML = document.getElementById("textareaID").value;
         }
         function scrape() {
-            // var str = $('.FPmhX').text();
-            // console.log(str + ", ");
             arr = $('.FPmhX').map(function(){
                 return this.title;
             });
@@ -20,7 +17,6 @@
         function write(arr) {
             var array = [];
             array = Array.from(arr);;
-            // var fieldNameElement = document.getElementById('result');
             var fieldNameElement = document.getElementById('textareaResults');
             fieldNameElement.innerHTML = "[";
             array.forEach(element => {
@@ -31,10 +27,7 @@
             fieldNameElement.innerHTML += "]";
         }
     </script>
-    <!-- <h1>Per eseguire lancia crwal(); dalla console javascript e poi guarda il risultato dentro reuslt</h1> -->
-    <div id="result">
-
-    </div>
+    
     <h2>Paste the HTML here</h2>
     <textarea id="textareaID" placeholder="HTML goes here..." rows="40" cols="50" name="comment" form="usrform"></textarea>
     <textarea id="textareaResults" placeholder="list result...." rows="40" cols="100" name="comment" form="usrform"></textarea>
